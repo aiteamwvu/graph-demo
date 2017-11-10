@@ -13,4 +13,12 @@ function onNodeClick(node) {
 function onNodeDblClick(node) {
 	console.log("DOUBLE CLICK");
 	console.log(node);
+	if (node.type == "node") {
+		openInNewTab(node.id);
+	}
+}
+
+function openInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
 }
