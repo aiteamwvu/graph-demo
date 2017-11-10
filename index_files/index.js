@@ -14,16 +14,4 @@ function loadGraph(url) {
             .autoColorBy('group')
             .forceEngine('ngraph')
             .jsonUrl(url);
-/*
-	Graph
-	    .cooldownTicks(300)
-	    .cooldownTime(20000)
-	    .nodeRelSize(0.5)
-	    .idField('id')
-	    .nameField('id')
-	    .valField('id')
-	    .autoColorBy('group')
-	    .forceEngine('ngraph')
-	    .jsonUrl(url);
-*/
 }
