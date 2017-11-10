@@ -1,16 +1,29 @@
-const Graph = ForceGraph3D()
-	(document.getElementById("3d-graph"));
+var url = '.miserables.json';
+const Graph = ForceGraph3D()(document.getElementById("3d-graph"));
 
-let curDataSetIdx;
-const dataSets = getGraphDataSets();
+loadGraph(url);
 
-let toggleData;
-(toggleData = function() {
-	curDataSetIdx = curDataSetIdx === undefined ? 0 : (curDataSetIdx+1)%dataSets.length;
-	const dataSet = dataSets[curDataSetIdx];
-
-	Graph.resetProps(); // Wipe current state
-	dataSet(Graph); // Load data set
-
-	document.getElementById('graph-data-description').innerHTML = dataSet.description ? `Viewing ${dataSet.description}` : '';
-})(); // IIFE init
+function loadGraph(url) {
+        Graph
+		    .cooldownTicks(1000)
+		    .cooldownTime(20000)
+		    .nodeRelSize(5)
+	    	.idField('id')
+            .nameField('id')
+            //.valField('group')
+            .autoColorBy('group')
+            .forceEngine('ngraph')
+            .jsonUrl(url);
+/*
+	Graph
+	    .cooldownTicks(300)
+	    .cooldownTime(20000)
+	    .nodeRelSize(0.5)
+	    .idField('id')
+	    .nameField('id')
+	    .valField('id')
+	    .autoColorBy('group')
+	    .forceEngine('ngraph')
+	    .jsonUrl(url);
+*/
+}
