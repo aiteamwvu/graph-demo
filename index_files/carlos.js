@@ -7,6 +7,12 @@ function onNodeClick(node) {
 		} else {
 			node.__line.material.opacity = 1;
 		}
+	} else {
+		if (node.__sphere.material.opacity == 1) {
+			node.__sphere.material.opacity = 0.75;
+		} else {
+			node.__sphere.material.opacity = 1;
+		}
 	}
 }
 
