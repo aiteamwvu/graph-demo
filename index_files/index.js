@@ -25,7 +25,3 @@ function loadGraph(url) {
 	    .forceEngine('ngraph')
 	    .jsonUrl(url);
 }
-
-function onNodeClick(node) {
-	console.log(node);
-}
