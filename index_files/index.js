@@ -1,4 +1,4 @@
-var url = '.miserables.json';
+var url = 'data.json';
 const Graph = ForceGraph3D()(document.getElementById("3d-graph"));
 
 loadGraph(url);
@@ -6,9 +6,9 @@ loadGraph(url);
 function loadGraph(url) {
 	Graph.resetProps();
 	Graph
-		.warmupTicks(200)
-	    .cooldownTicks(1000)
-	    .cooldownTime(15000)
+		.warmupTicks(0)
+	    .cooldownTime(1500)
+	   	.cooldownTicks(200)
 	    .nodeRelSize(5)
 	    .numDimensions(3)
 	    .nodeResolution(8)
@@ -21,6 +21,7 @@ function loadGraph(url) {
 	    .linkTargetField('target')
 	    //.linkColorField('color')
 	    .onNodeClick(onNodeClick)
+	    .onNodeDblClick(onNodeDblClick)
 	    .autoColorBy('group')
 	    .forceEngine('ngraph')
 	    .jsonUrl(url);
