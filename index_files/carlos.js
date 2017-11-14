@@ -29,8 +29,8 @@ function openInNewTab(url) {
   win.focus();
 }
 
-function getData() {
-	$.getJSON("http://aiwvu.ml:5000/?q=android", function(data) {
+function getData(query) {
+	$.getJSON("http://aiwvu.ml:5000/?q=" + query, function(data) {
 		var wordsArray = {};
 		var output = {nodes:[], links:[]};
 		var id = 0;

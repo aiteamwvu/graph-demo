@@ -28,4 +28,4 @@ function loadGraph(url) {
 	    //.jsonUrl(url);
 }
 
-getData();
+getData(window.location.hash?window.location.hash.replace("#",""):"android");
