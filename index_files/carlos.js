@@ -30,7 +30,7 @@ function openInNewTab(url) {
 }
 
 function getData() {
-	$.getJSON("http://aiwvu.ml:5000/?q=iphone", function(data) {
+	$.getJSON("http://aiwvu.ml:5000/?q=android", function(data) {
 		var wordsArray = {};
 		var output = {nodes:[], links:[]};
 		var id = 0;
