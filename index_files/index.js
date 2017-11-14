@@ -25,5 +25,7 @@ function loadGraph(url) {
 	    .onNodeDblClick(onNodeDblClick)
 	    .autoColorBy('group')
 	    .forceEngine('ngraph')
-	    .jsonUrl(url);
+	    //.jsonUrl(url);
 }
+
+getData();
